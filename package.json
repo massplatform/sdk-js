@@ -1,0 +1,39 @@
+{
+  "name": "@massplatform/sdk",
+  "version": "1.0.0",
+  "description": "MASS Javascript SDK",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "prepare": "npm run build",
+    "release": "npm run release:create && npm run release:push",
+    "release:create": "standard-version $([ ! -s CHANGELOG.md ] && echo --first-release)",
+    "release:push": "git push --follow-tags origin $(git branch --show-current)",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/massplatform/sdk-js.git"
+  },
+  "keywords": [
+    "mass",
+    "sdk",
+    "encode",
+    "decode"
+  ],
+  "author": "MASS Platform",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/massplatform/sdk-js/issues"
+  },
+  "homepage": "https://github.com/massplatform/sdk-js#readme",
+  "devDependencies": {
+    "rollup": "^2.47.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "standard-version": "^9.3.0"
+  }
+}
